@@ -1,5 +1,162 @@
-/* Основные стили проекта. Это стили для темы, которую вы верстаете первой. */
-
 .page {
-  /* сохраните в разметке и стилях класс page. На его основе работает скрипт. */
+  font-family: var(--font-family);
+  background-color: #000028;
+  background-image: var(--background-image);
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.cover {
+  display: grid;
+  padding: clamp(10px, 0.0286rem + 2.5445vw, 20px);
+  min-block-size: 100vh;
+}
+
+.page-title {
+  color: var(--header-title);
+  font-weight: 700;
+  font-size: 157px;
+  line-height: 129.53px;
+}
+
+.shadow-decor {
+  text-shadow: 4px 4px 0 var(--accent-color);
+}
+
+.header__title {
+  color: var(--header-text);
+  font-weight: 700;
+  font-size: var(--font-size);
+  background: var(--accent-color);
+  height: fit-content;
+}
+
+.decorated-zone {
+  position: relative;
+}
+
+.header__theme-menu{
+  justify-self: flex-end;
+}
+
+.header__theme-menu-list {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  gap: 10px;
+  list-style: none;
+}
+
+.header__theme-menu-item {}
+
+.header__theme-menu-button{
+  border: 1px solid transparent;
+  padding: 2px 12px;
+  color: var(--accent-color);
+  font-size: var(--font-size);
+  line-height: 18px;
+  text-transform: lowercase;
+  background: transparent;
+  cursor: pointer;
+}
+
+.header__theme-menu-button_active {
+  border-color: currentColor;
+  cursor: default;
+  pointer-events: none;
+}
+
+.header__theme-menu-button:hover {
+  border-color: var(--secondary-color-o-40, #ff007040);
+}
+
+.header__theme-menu-button:focus {
+  outline: 0;
+}
+
+.header__theme-menu-button:focus-visible {
+  border-block-end-color: currentColor;
+}
+
+.main {
+  display: grid;
+  gap: 50px;
+  padding: 40px 10px;
+}
+
+.section {
+  display: grid;
+  gap: 20px;
+}
+
+.article{
+  display: grid;
+  gap: 10px;
+}
+
+.article-list {
+  display: grid;
+  gap: 20px;
+
+}
+
+.article-list-item {}
+
+
+.title {
+  color: var(--accent-color);
+  font-weight: 700;
+  font-size: var(--font-size);
+  line-height: 23.4px;
+}
+
+.title-decor {
+  color: var(--header-text);
+  background: var(--accent-color);
+}
+
+.footer {
+  justify-content: center;
+  align-items: center;
+}
+
+@media (width >= 768px) {
+
+  .header__title {
+    justify-self: end;
+    inline-size: clamp(364px, calc(100% / 2 - 10px), 491px);
+  }
+
+  .main {
+    gap: 80px;
+    padding: 60px 20px;
+  }
+
+  .section-why {
+    grid-template-columns: 1fr 2fr;
+  }
+
+  .section-how {
+    grid-template-columns: 1fr 2fr;
+    gap: 20px;
+  }
+}
+
+@media (width >= 1024px) {
+
+  .header__theme-menu-list {
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  .header__theme-menu{
+    justify-self: center;
+  }
+
+  .section-what {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
 }
