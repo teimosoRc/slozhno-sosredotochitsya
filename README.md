@@ -2,10 +2,6 @@
 
 https://github.com/teimosoRc/slozhno-sosredotochitsya
 
-#TODO
-- add gallery section
-- add link 
-- add rec 
-- add theme variables
+## TODO
 - pixel perfect
 - optimize code
