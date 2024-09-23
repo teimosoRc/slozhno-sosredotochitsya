@@ -4,9 +4,15 @@
 */
 
 :root {
-  --font-size: 18px;
-  --font-family: 'IBM Plex Mono', sans-serif;
   --background-image: url(../images/cover-image.png);
-  --rec-decor-visibility: hidden;
-
+  --accent-color: #FF0070;
+  --header-text-color: #000028;
+  --header-title-color: #DB00FF;
+  --text-color: #F1B2CE;
+  --font-family: 'IBM Plex Mono', monospace;
+  --sub-title-color: #FF0070;
+  --border-hover-color: rgba(255 0 112 0.4);
+  --button-color: #FF0070;
+  --decorate-color: #FF0070;
+  --rec-decor-visibility: visible;
 }
