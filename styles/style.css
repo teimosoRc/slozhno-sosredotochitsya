@@ -17,7 +17,7 @@
 .page-title {
   color: var(--header-title-color);
   font-weight: 700;
-  font-size: 157px;
+  font-size: clamp(7.25rem, 5.7694rem + 6.3174vw, 9.8125rem);
   line-height: 129.53px;
 }
 
@@ -26,10 +26,10 @@
 }
 
 .header__title {
+  height: fit-content;
   color: var(--header-text-color);
   font-weight: 700;
   background: var(--accent-color);
-  height: fit-content;
 }
 
 .decorated-zone {
@@ -86,7 +86,7 @@
   block-size: 9px;
 }
 
-.header__theme-menu{
+.header__theme-menu {
   justify-self: flex-end;
   margin-block: 75px;
 }
@@ -99,9 +99,7 @@
   list-style: none;
 }
 
-.header__theme-menu-item {}
-
-.header__theme-menu-button{
+.header__theme-menu-button {
   border: 1px solid transparent;
   padding: 2px 12px;
   color: var(--button-color);
@@ -140,7 +138,7 @@
   gap: 20px;
 }
 
-.article{
+.article {
   display: grid;
   gap: 10px;
   color: var(--text-color);
@@ -152,17 +150,17 @@
 
 }
 
-.article-list-item {}
-
 .title {
   color: var(--sub-title-color);
   font-weight: 700;
+  font-size: inherit;
   line-height: 23.4px;
 }
 
 .sub-title {
   color: var(--accent-color);
   font-weight: 400;
+  font-size: inherit;
   line-height: 23.4px;
 }
 
@@ -253,7 +251,7 @@
     justify-content: center;
   }
 
-  .header__theme-menu{
+  .header__theme-menu {
     justify-self: center;
     margin-block: 20px;
   }
