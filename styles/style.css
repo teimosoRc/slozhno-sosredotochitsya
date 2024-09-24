@@ -1,6 +1,7 @@
 .page {
   font-family: var(--font-family);
   font-size: 18px;
+  line-height: 23.4px;
   background-color: #000028;
   background-image: var(--background-image);
   background-position: center;
@@ -8,28 +9,24 @@
   background-attachment: fixed;
 }
 
-.cover {
-  display: grid;
-  padding: clamp(10px, 0.0286rem + 2.5445vw, 20px);
-  min-block-size: 100vh;
+.link {
+  text-decoration: none;
 }
 
-.page-title {
-  color: var(--header-title-color);
-  font-weight: 700;
-  font-size: clamp(7.25rem, 5.7694rem + 6.3174vw, 9.8125rem);
-  line-height: 129.53px;
+.link:hover {
+  text-decoration: underline;
+}
+
+.link:focus {
+  outline: 0;
+}
+
+.link:focus-visible {
+  outline: 1px solid currentColor;
 }
 
 .shadow-decor {
   text-shadow: 4px 4px 0 var(--accent-color);
-}
-
-.header__title {
-  height: fit-content;
-  color: var(--header-text-color);
-  font-weight: 700;
-  background: var(--accent-color);
 }
 
 .decorated-zone {
@@ -86,9 +83,30 @@
   block-size: 9px;
 }
 
+.cover {
+  display: grid;
+  padding: clamp(10px, 0.0286rem + 2.5445vw, 20px);
+  min-block-size: 100vh;
+}
+
+.page-title {
+  margin-block-start: 17px;
+  color: var(--header-title-color);
+  font-weight: 700;
+  font-size: clamp(7.25rem, 5.7694rem + 6.3174vw, 9.8125rem);
+  line-height: clamp(5.98125rem, 4.7595rem + 5.2126vw, 8.095625rem);
+}
+
+.header__title {
+  height: fit-content;
+  color: var(--header-text-color);
+  font-weight: 700;
+  background: var(--accent-color);
+}
+
 .header__theme-menu {
   justify-self: flex-end;
-  margin-block: 75px;
+  margin-block-start: 65px;
 }
 
 .header__theme-menu-list {
@@ -101,8 +119,9 @@
 
 .header__theme-menu-button {
   border: 1px solid transparent;
-  padding: 2px 12px;
+  padding: 1.5px 13px;
   color: var(--button-color);
+  font-weight: 400;
   line-height: 18px;
   text-transform: lowercase;
   background: transparent;
@@ -133,7 +152,8 @@
   padding: 40px 10px;
 }
 
-.section {
+.section,
+.article-list {
   display: grid;
   gap: 20px;
 }
@@ -142,12 +162,6 @@
   display: grid;
   gap: 10px;
   color: var(--text-color);
-}
-
-.article-list {
-  display: grid;
-  gap: 20px;
-
 }
 
 .title {
@@ -169,6 +183,10 @@
   background: var(--accent-color);
 }
 
+.section-gallery {
+  gap: 10px;
+}
+
 .gallery {
   display: grid;
   gap: 10px;
@@ -186,26 +204,30 @@
   align-items: center;
 }
 
-.link {
-  text-decoration: none;
-}
-
-.link:hover {
-  text-decoration: underline;
-}
-
-.link:focus {
-  outline: 0;
-}
-
-.link:focus-visible {
-  outline: 1px solid currentColor;
+.footer-title {
+  color: var(--header-title-color);
+  font-weight: 700;
+  font-size: clamp(7.25rem, 5.7694rem + 6.3174vw, 9.8125rem);
+  line-height: clamp(5.98125rem, 4.7595rem + 5.2126vw, 8.095625rem);
 }
 
 @media (width >= 768px) {
 
+  .header__theme-menu {
+    margin-block-start: 175px;
+  }
+
+  .header {
+    padding-inline-start: 0;
+  }
+
+  .page-title {
+    font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
+  }
+
   .header__title {
     justify-self: end;
+    margin-block-end: 10px;
     inline-size: clamp(364px, calc(100% / 2 - 10px), 491px);
   }
 
@@ -214,12 +236,26 @@
     padding: 60px 20px;
   }
 
+  .section {
+    grid-template-columns: clamp(236px, calc(100% / 3.25), 315px) 1fr;
+  }
+
   .section-why {
     grid-template-columns: 1fr 2fr;
   }
 
+  .section-what__article-list {
+    display: grid;
+    grid-column-start: span 2;
+  }
+
   .section-how {
     grid-template-columns: 1fr 2fr;
+    gap: 20px;
+  }
+
+  .section-gallery {
+    grid-template-columns: 1fr;
     gap: 20px;
   }
 
@@ -242,9 +278,21 @@
     grid-column-start: 2;
     grid-column-end: 4;
   }
+
+  .footer-title {
+    font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
+  }
 }
 
 @media (width >= 1024px) {
+
+  .page-title {
+    margin-block-start: 165px;
+  }
+  
+  .header__title {
+    margin-block-end: 0;
+  }
 
   .header__theme-menu-list {
     flex-direction: row;
@@ -253,10 +301,11 @@
 
   .header__theme-menu {
     justify-self: center;
-    margin-block: 20px;
+    margin-inline-start: 15px;
+    margin-block: 0;
   }
 
-  .section-what {
+  .section-what__article-list {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 20px;
