@@ -2,7 +2,7 @@
   font-family: var(--font-family);
   font-size: 18px;
   line-height: 23.4px;
-  background-color: #000028;
+  background-color: var(--bg-color);
   background-image: var(--background-image);
   background-position: center;
   background-size: cover;
@@ -11,6 +11,7 @@
 
 .link {
   text-decoration: none;
+  text-shadow: 2px 2px 0 var(--accent-color);
 }
 
 .link:hover {
@@ -63,8 +64,8 @@
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  inset-inline-end: 29px;
-  inset-block-start: 20px;
+  inset-inline-end: 20px;
+  inset-block-start: 10px;
 }
 
 .rec-decor::before {
@@ -77,7 +78,7 @@
   content: "";
   display: inline-block;
   border-radius: 50%;
-  box-shadow: 0 0 2px 2px var(--accent-color);
+  box-shadow: 0 0 4px 2px var(--accent-color);
   background: var(--accent-color);
   inline-size: 9px;
   block-size: 9px;
@@ -86,7 +87,8 @@
 .cover {
   display: grid;
   padding: clamp(10px, 0.0286rem + 2.5445vw, 20px);
-  min-block-size: 100vh;
+  block-size: 100vh;
+  min-height: 668px;
 }
 
 .page-title {
@@ -113,7 +115,7 @@
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  gap: 10px;
+  gap: 12px;
   list-style: none;
 }
 
@@ -183,6 +185,11 @@
   background: var(--accent-color);
 }
 
+
+.section-how__title {
+  margin-block-end: 20px;
+}
+
 .section-gallery {
   gap: 10px;
 }
@@ -212,6 +219,11 @@
 }
 
 @media (width >= 768px) {
+
+  .rec-decor {
+    inset-inline-end: 28px;
+    inset-block-start: 20px;
+  }
 
   .header__theme-menu {
     margin-block-start: 175px;
@@ -281,6 +293,7 @@
 
   .footer-title {
     font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
+    text-shadow: 2px 2px 0 var(--accent-color);
   }
 }
 
@@ -310,4 +323,10 @@
     grid-template-columns: repeat(3, 1fr);
     gap: 20px;
   }
+
+  .section-why__list,
+  .section-how__list {
+  margin-inline-start: -5px;
+}
+
 }
