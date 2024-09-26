@@ -216,6 +216,7 @@
   font-weight: 700;
   font-size: clamp(7.25rem, 5.7694rem + 6.3174vw, 9.8125rem);
   line-height: clamp(5.98125rem, 4.7595rem + 5.2126vw, 8.095625rem);
+  text-shadow: 2px 2px 0 var(--accent-color);
 }
 
 @media (width >= 768px) {
@@ -293,7 +294,6 @@
 
   .footer-title {
     font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
-    text-shadow: 2px 2px 0 var(--accent-color);
   }
 }
 
@@ -326,7 +326,6 @@
 
   .section-why__list,
   .section-how__list {
-  margin-inline-start: -5px;
+    margin-inline-start: -5px;
 }
-
 }
